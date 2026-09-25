@@ -174,6 +174,19 @@ def test_crawl_check_flags_fx_above_cpi_and_skips_partial_month():
     assert sep["partial"] and not sep["flag"] and sep["status"] == "Month in progress"
 
 
+def test_crawl_check_does_not_flag_partial_month_even_with_its_cpi():
+    # FX feed stalled mid-September but September CPI is already out: a half-month
+    # average must not raise a regime-break flag.
+    idx = pd.bdate_range("2026-07-01", "2026-09-15")
+    level = {7: 46.0, 8: 46.46, 9: 47.50}  # Sep +2.2% on a partial average
+    closes = pd.Series([level[d.month] for d in idx], index=idx)
+    cpi = pd.Series([100.0, 101.5, 102.0],  # Sep CPI +0.49%
+                    index=pd.to_datetime(["2026-07-01", "2026-08-01", "2026-09-01"]))
+    sep = model.crawl_check(closes, cpi).iloc[0]
+    assert sep["partial"] and sep["gap_pp"] > 0
+    assert not sep["flag"] and sep["status"] == "Month in progress"
+
+
 def test_crawl_check_without_cpi_never_flags():
     closes = business_closes("2026-06-01", "2026-08-31", 0.03, 46.0)
     df = model.crawl_check(closes, None)
