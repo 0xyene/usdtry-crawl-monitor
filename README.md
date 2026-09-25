@@ -1,5 +1,7 @@
 # USD/TRY crawl monitor
 
+[![tests](https://github.com/0xyene/usdtry-crawl-monitor/actions/workflows/tests.yml/badge.svg)](https://github.com/0xyene/usdtry-crawl-monitor/actions/workflows/tests.yml)
+
 A Streamlit app that tracks USD/TRY against a managed-crawl model. It covers:
 
 - where the rate is now relative to the model's paths and band
