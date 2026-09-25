@@ -1,0 +1,7 @@
+streamlit>=1.50
+pandas>=2.2
+numpy>=1.26
+plotly>=6.0
+requests>=2.31
+PyYAML>=6.0
+python-dotenv>=1.0

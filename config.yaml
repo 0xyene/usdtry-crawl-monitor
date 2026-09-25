@@ -1,0 +1,42 @@
+# USD/TRY crawl monitor — model parameters. Edit freely; press "Refresh data" or restart.
+# Rates are in % per month (1.45 means 1.45%/mo). Paths compound monthly:
+#   rate(t) = anchor * (1 + r) ** (days / days_per_month)
+
+anchor:
+  date: 2026-05-29   # Kurban Bayramı — TCMB published no fixing 27–29 May; 45.70 is your level
+  rate: 45.70
+
+paths:
+  base_pct: 1.2
+  central_pct: 1.45
+  band_low_pct: 1.1
+  band_high_pct: 2.0
+  linear_try_per_month: 0.556
+
+updated_path:           # starts from the latest close; driven by the sidebar slider
+  default_pct: 1.5
+  min_pct: 0.5
+  max_pct: 3.0
+  step_pct: 0.05
+
+days_per_month: 30.4375
+
+horizons:               # chart end dates
+  Dec-26: 2026-12-31
+  Jun-27: 2027-06-30
+  Nov-27: 2027-11-30
+
+pace:
+  rolling_days: [30, 60, 90]
+  regression_window_months: 3
+  regression_step_months: 1   # compare each window with the one ending this many months earlier
+  regression_windows_shown: 6
+  faster_flag_pp: 0.20        # flag when slope rises more than this (pp of %/mo) vs prior window
+
+data:
+  history_start: 2025-01-01
+  chart_start: 2026-01-01
+  evds_fx_series: TP.DK.USD.A.YTL        # TCMB indicative forex BUYING rate, daily
+  evds_cpi_series: TP.TUKFIY2025.GENEL   # TÜFE 2025=100 general index (TP.FG.J0 is archived)
+  frankfurter_provider: TCMB             # same fixing as EVDS (mid); null = blend of all providers
+  cache_ttl_hours: 6

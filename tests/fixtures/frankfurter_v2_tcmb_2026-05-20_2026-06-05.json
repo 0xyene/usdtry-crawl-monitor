@@ -1,0 +1,62 @@
+[
+    {
+        "date": "2026-05-20",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.48865
+    },
+    {
+        "date": "2026-05-21",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.54995
+    },
+    {
+        "date": "2026-05-22",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.5687
+    },
+    {
+        "date": "2026-05-25",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.59425
+    },
+    {
+        "date": "2026-05-26",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.6723
+    },
+    {
+        "date": "2026-06-01",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.6723
+    },
+    {
+        "date": "2026-06-02",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.86605
+    },
+    {
+        "date": "2026-06-03",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.8815
+    },
+    {
+        "date": "2026-06-04",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.9109
+    },
+    {
+        "date": "2026-06-05",
+        "base": "USD",
+        "quote": "TRY",
+        "rate": 45.92865
+    }
+]
