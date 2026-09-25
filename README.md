@@ -2,6 +2,8 @@
 
 [![tests](https://github.com/0xyene/usdtry-crawl-monitor/actions/workflows/tests.yml/badge.svg)](https://github.com/0xyene/usdtry-crawl-monitor/actions/workflows/tests.yml)
 
+**Live app:** https://usdtry-crawl-monitor-9wmtbcrvynksadsyoh5pe3.streamlit.app
+
 A Streamlit app that tracks USD/TRY against a managed-crawl model. It covers:
 
 - where the rate is now relative to the model's paths and band
